@@ -80,6 +80,11 @@ def levelorder(root):
             if node.right: queue.append(node.right)
             print(node.val)
 
+def height(root):
+    if not root:
+        return 0 
+    else:
+        return 1 + max(height(root.left), height(root.right)) 
 
 if __name__ == '__main__':
     root = TreeNode(1)
@@ -92,4 +97,4 @@ if __name__ == '__main__':
     root.left.left= node3
     root.left.right = node4
 
-    levelorder(root)
+    print(height(root))
