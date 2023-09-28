@@ -1,3 +1,4 @@
 # Data Structures & Algorithms
 
-My implementation of some data structures and algorithms in python.
+My implementation of Data structures and algorithms.
+I was preparing for interviews and leetcode.
