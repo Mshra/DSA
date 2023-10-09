@@ -26,7 +26,6 @@ class TreeNode:
     def __str__(self) -> str:
         return str(self.val)
 
-
 # inorder, preorder and postorder are depth first search traversal techniques(DFS)
 def inorder(root):
     '''
