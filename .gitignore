@@ -1,3 +1,5 @@
 #python virtual environment
 venv
+
+# main program is a rough program
 src/main.py
