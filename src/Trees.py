@@ -77,7 +77,7 @@ def levelorder(root):
             node = queue.popleft()
             if node.left: queue.append(node.left)
             if node.right: queue.append(node.right)
-            print(node.val)
+            print(node.val, end=' ')
 
 def height(root):
     if not root:
@@ -96,4 +96,4 @@ if __name__ == '__main__':
     root.left.left= node3
     root.left.right = node4
 
-    print(height(root))
+    levelorder(root)
