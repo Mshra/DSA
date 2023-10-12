@@ -85,15 +85,29 @@ def height(root):
     else:
         return 1 + max(height(root.left), height(root.right)) 
 
-if __name__ == '__main__':
-    root = TreeNode(1)
-    node1 = TreeNode(2)
-    node2 = TreeNode(3)
-    node3 = TreeNode(4)
-    node4 = TreeNode(5)
-    root.left = node1
-    root.right = node2
-    root.left.left= node3
-    root.left.right = node4
+def insertion(root, insert):
+    dfs = deque()
+    dfs.append(root)
 
-    levelorder(root)
+    while len(dfs):
+        node = dfs.popleft()
+
+        if node.right: dfs.append(node.right)
+        if node.left: dfs.append(node.left)
+
+        if not node.right: 
+            node.right = insert
+            return None 
+
+        if not node.left:
+            node.left = insert
+            return None
+
+if __name__ == '__main__':
+    root = TreeNode(10)
+    root.left = TreeNode(11)
+    root.left.left = TreeNode(7)
+    root.right = TreeNode(9)
+    root.right.left = TreeNode(15)
+    root.right.right = TreeNode(8)
+    print(height(root))
