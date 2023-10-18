@@ -15,7 +15,6 @@ class node:
     my_node = node(10)
     print(my_node)  # Output: "10"
     """
-
     def __init__(self, val, next=None) -> None:
         self.val = val
         self.next = next
@@ -82,8 +81,74 @@ def insert(head, key):
 
     head.next = node(key)
 
-def insertAfter(head, nxt, key):
-    return None
+def insert_after(head, nxt, key):
+    """
+    Insert a new node with the given 'key' immediately after the node with value 'nxt' in a singly-linked list starting at 'head'.
+
+    Parameters:
+    - head: The head node of the linked list where the new node will be inserted.
+    - nxt: The value of the node after which the new node will be inserted.
+    - key: The value to be inserted into the linked list as a new node.
+
+    Returns:
+    None
+
+    Note:
+    This function iterates through the singly-linked list, starting from the 'head' node, and searches for a node with the value 'nxt'. Once found, it inserts a new node with the value 'key' immediately after that node.
+
+    Example:
+    # Create a linked list: 1 -> 3 -> 5
+    head = ListNode(1)
+    head.next = ListNode(3)
+    head.next.next = ListNode(5)
+    nxt_value = 3
+    key = 7
+    insert_after(head, nxt_value, key)
+    # The linked list is now: 1 -> 3 -> 7 -> 5
+    """
+    while head:
+        if head.val == nxt:
+            temp = head.next
+            head.next = node(key)
+            head.next.next = temp
+            return
+        head = head.next
+
+def delete(head, key):
+    """
+    Delete the first occurrence of a node with the specified 'key' from a singly-linked list starting at 'head'.
+
+    Parameters:
+    - head: The head node of the linked list from which to delete the node.
+    - key: The value to be deleted from the linked list.
+
+    Returns:
+    None
+
+    Note:
+    This function iterates through the singly-linked list, starting from the 'head' node, and searches for the first occurrence of a node with the value 'key'. Once found, it removes the node from the list by updating the 'next' references.
+
+    Example:
+    # Create a linked list: 1 -> 3 -> 5 -> 7
+    head = ListNode(1)
+    head.next = ListNode(3)
+    head.next.next = ListNode(5)
+    head.next.next.next = ListNode(7)
+    key = 5
+    delete(head, key)
+    # The linked list is now: 1 -> 3 -> 7
+    """
+    prev = None
+    while head:
+        if head.val == key:
+            if prev:
+                prev.next = head.next
+            else:
+                # Handle the case where the node to be deleted is the head.
+                head = head.next
+            return
+        prev = head
+        head = head.next
 
 def show(head):
     """
@@ -116,6 +181,8 @@ def show(head):
 
 if __name__ == '__main__':
     head = node(1)
-    for i in range(2, 5):
+    for i in range(2, 8):
         insert(head, i)
+    show(head)
+    delete(head, 1)
     show(head)
