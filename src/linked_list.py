@@ -1,3 +1,6 @@
+import time
+
+
 class node:
     """
     Represents a node in a singly-linked list.
@@ -183,6 +186,3 @@ if __name__ == '__main__':
     head = node(1)
     for i in range(2, 8):
         insert(head, i)
-    show(head)
-    delete(head, 1)
-    show(head)

@@ -71,12 +71,7 @@ def search(root, key):
     else:
         return search(root.right, key)
 
-
 if __name__ == '__main__':
     root = Trees.node(1)
     for i in range(2, 8):
         insert(root, i)
-    if search(root, 11) is not None:
-        print('found')
-    else:
-        print('not found')
