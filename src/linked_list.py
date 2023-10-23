@@ -1,6 +1,3 @@
-import time
-
-
 class node:
     """
     Represents a node in a singly-linked list.

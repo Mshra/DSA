@@ -1,7 +1,7 @@
 import time
 
 def pow(a, n):
-    """
+  """
     Compute the power of a number 'a' raised to the exponent 'n' using a recursive algorithm. Running time of the algorithm is O(log n), where n is the exponent.
 
     Parameters:
