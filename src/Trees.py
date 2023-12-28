@@ -174,8 +174,10 @@ def height(root):
 
 if __name__ == '__main__':
     root = node(10)
+
     root.left = node(11)
     root.left.left = node(7)
     root.right = node(9)
     root.right.left = node(15)
     root.right.right = node(8)
+    print('hello, world')
