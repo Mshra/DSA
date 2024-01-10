@@ -29,6 +29,8 @@ class node:
         return str(self.val)
 
 # inorder, preorder and postorder are depth first search traversal techniques(DFS)
+
+
 def inorder(root):
     """
     Perform an in-order traversal of a binary tree rooted at 'root'.
@@ -56,6 +58,7 @@ def inorder(root):
         print(root.val, end=' ')
         inorder(root.right)
 
+
 def preorder(root):
     """
     Perform a pre-order traversal of a binary tree rooted at 'root'.
@@ -82,6 +85,7 @@ def preorder(root):
         print(root.val, end=' ')
         preorder(root.left)
         preorder(root.right)
+
 
 def postorder(root):
     """
@@ -111,6 +115,8 @@ def postorder(root):
         print(root.val, end=' ')
 
 # Level order traversal or breadth first search(BFS)
+
+
 def bfs(root):
     """
     Perform a breadth-first traversal of a binary tree rooted at 'root'.
@@ -145,6 +151,7 @@ def bfs(root):
                 queue.append(node.right)
             print(node.val, end=' ')
 
+
 def height(root):
     """
     Calculate the height of a binary tree rooted at 'root'.
@@ -172,6 +179,7 @@ def height(root):
     else:
         return 1 + max(height(root.left), height(root.right))
 
+
 if __name__ == '__main__':
     root = node(10)
 
@@ -180,4 +188,5 @@ if __name__ == '__main__':
     root.right = node(9)
     root.right.left = node(15)
     root.right.right = node(8)
+
     print('hello, world')
