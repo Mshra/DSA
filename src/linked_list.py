@@ -15,12 +15,14 @@ class node:
     my_node = node(10)
     print(my_node)  # Output: "10"
     """
+
     def __init__(self, val, next=None) -> None:
         self.val = val
         self.next = next
 
     def __str__(self) -> str:
         return str(self.val)
+
 
 def search(head, key):
     """
@@ -53,6 +55,7 @@ def search(head, key):
         head = head.next
     return False
 
+
 def insert(head, key):
     """
     Insert a new node with the given 'key' at the end of a singly-linked list starting at 'head'.
@@ -80,6 +83,7 @@ def insert(head, key):
         head = head.next
 
     head.next = node(key)
+
 
 def insert_after(head, nxt, key):
     """
@@ -113,6 +117,7 @@ def insert_after(head, nxt, key):
             head.next.next = temp
             return
         head = head.next
+
 
 def delete(head, key):
     """
@@ -150,6 +155,7 @@ def delete(head, key):
         prev = head
         head = head.next
 
+
 def show(head):
     """
     Display the contents of a singly-linked list starting at 'head'.
@@ -178,6 +184,7 @@ def show(head):
         else:
             print(head.val, end=' -> ')
         head = head.next
+
 
 if __name__ == '__main__':
     head = node(1)

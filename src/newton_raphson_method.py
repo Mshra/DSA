@@ -1,15 +1,12 @@
-import math
+class Vector:
+    def __init__(self, x, y, z) -> None:
+        self.x = x
+        self.y = y
+        self.z = z
 
-def f(x):
-    return math.pow(math.e, 2*x) + math.sin(x**2)
+    def __str__(self) -> str:
+        return f'{self.x}i + {self.y}j + {self.z}k'
 
-def derivative(function, point):
-    h = 0.0001
-    return (function(point + h) - function(point)) / h
 
-def square_root(number):
-    if number == 0: return number
-
-if __name__ == '__main__':
-
-    print("hello, world")
+z = Vector(1, 1, 1)
+print(z)
